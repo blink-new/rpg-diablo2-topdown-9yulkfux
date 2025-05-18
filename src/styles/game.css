@@ -1,0 +1,147 @@
+/* Основной контейнер игры */
+.game-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  cursor: url('/cursor.png'), auto;
+}
+
+/* Камера и область просмотра */
+.camera-viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.camera {
+  position: absolute;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+/* Игровая карта */
+.game-map {
+  position: relative;
+}
+
+/* Сущности на карте */
+.map-entity {
+  position: absolute;
+  background-color: yellow;
+  border-radius: 4px;
+}
+
+.entity-chest {
+  background-color: #8a5a00;
+}
+
+.entity-npc {
+  background-color: #2d9f2d;
+}
+
+.entity-enemy {
+  background-color: #b30000;
+}
+
+.entity-portal {
+  background-color: #6a00b3;
+}
+
+.entity-item {
+  background-color: #00a3cc;
+}
+
+/* Игровой интерфейс */
+.game-ui {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+/* Панель здоровья и маны */
+.health-mana-panel {
+  width: 300px;
+  margin-left: 20px;
+}
+
+.health-bar, .mana-bar {
+  height: 20px;
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.health-fill {
+  height: 100%;
+  background-color: #cc0000;
+  transition: width 0.3s;
+}
+
+.mana-fill {
+  height: 100%;
+  background-color: #0055cc;
+  transition: width 0.3s;
+}
+
+.health-text, .mana-text {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Панель навыков */
+.skills-panel {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.skill-slot {
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Мини-карта */
+.mini-map {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #444;
+  border-radius: 5px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.mini-map-placeholder {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(50, 50, 50, 0.8) 10%, transparent 10%);
+  background-size: 10px 10px;
+}
